@@ -1,25 +1,32 @@
-<html>
-    <head>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-    </head>
-    <body>
-        <div class="container mt-4">
+ @extends('layouts.app')
+
+ @section('title', 'Profile Pengguna')
+
+ @section('content')
             <div class="card">
             <div class="card-header">
-                <h1>Profile Saya</h1>
+                <h1>Profile Pengguna</h1>
             </div>
             <div class="card-body">
-                <img src="profile.png" alt="Profile Picture" width="150">
-                <h3>Mellia Natasya</h3>
-                <p>Email: mellianatasya731@gmail.com</p>
-                <p>Bis: Pelajar SMK Negeri 1 Sayunng</p>
+                <img src="{{ asset($profile['profile_picture']) }}" alt="Profile Picture" width="150">
+                <h3>{{ $profile['name'] }}</h3>
+                <p>Email: {{ $profile['email'] }}</p>
+                <p>Bio: {{ $profile['bio'] }}</p>
+
+                @if(count($profile['skills']) > 0)
                 <h5>Skills</h5>
                 <ul>
-                    <li>Scroll</li>
-                    <li>Masak Mie</li>
-                    <li>Membuat Teh</li>
-            </div>
-            </div>
+                    @foreach($profile['skills'] as $skill)
+                    <li>{{ $skill }}</li>
+                    @endforeach
+            </ul>
+            @else
+            <p>Tidak ada skills yang ditampilkan</p>
+        @endif
         </div>
-    </body>
-</html>
+        </div>
+        <div class="text-center p-3 bg-white text-dark">
+        © 2025 MyApp | All Rights Reserved
+    </div>
+</footer>
+@endsection
