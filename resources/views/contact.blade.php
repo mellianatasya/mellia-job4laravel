@@ -8,17 +8,17 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
-            <a class="navbar-brand" href="http://127.0.0.1:8000/">MyApp</a>
+    <div class="container">
+            <a class="navbar-brand" href="{{ route('home')}}">MyApp</a>
             <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:8000/">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:8000/about">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:8000/profile">Profile</a></li>
-                <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:8000/contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
+                <li class="nav-item"><a class="nav-link" href="{{ route('home')}}">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('about')}}">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('profile')}}">Profile</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('contact')}}">Contact</a></li>
 
+            </ul>
+    </nav>
+</div>
     <div class="container mt-4">
         <div class="card shadow-sm p-4">
             <h1 class="text-center mb-4">Hubungi Kami</h1>
